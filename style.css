@@ -1,0 +1,201 @@
+/* style.css */
+
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --primary-color: #ffc107;
+  --secondary-color: #000;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --neumorphic-bg: #e0e0e0;
+  --neumorphic-shadow-light: #ffffff;
+  --neumorphic-shadow-dark: #bebebe;
+}
+
+[data-theme="dark"] {
+  --bg-color: #333;
+  --text-color: #f0f0f0;
+  --primary-color: #ffc107;
+  --secondary-color: #fff;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --neumorphic-bg: #424242;
+  --neumorphic-shadow-light: #4e4e4e;
+  --neumorphic-shadow-dark: #343434;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Neumorphism Styles */
+.neumorphic {
+  background-color: var(--neumorphic-bg);
+  border-radius: 15px;
+  box-shadow: -7px -7px 10px var(--neumorphic-shadow-light),
+    7px 7px 10px var(--neumorphic-shadow-dark);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: -3px -3px 5px var(--neumorphic-shadow-light),
+    3px 3px 5px var(--neumorphic-shadow-dark);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s,
+    box-shadow 0.3s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e0ac00;
+  border-color: #e0ac00;
+  color: var(--secondary-color);
+  box-shadow: -3px -3px 5px var(--neumorphic-shadow-dark),
+    3px 3px 5px var(--neumorphic-shadow-light);
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #555;
+}
+
+.btn-secondary:hover {
+  background-color: #bbb;
+  border-color: #bbb;
+  color: #555;
+}
+
+.form-control {
+  background-color: var(--neumorphic-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-color);
+  box-shadow: inset -3px -3px 5px var(--neumorphic-shadow-light),
+    inset 3px 3px 5px var(--neumorphic-shadow-dark);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  background-color: var(--neumorphic-bg);
+  color: var(--text-color);
+  box-shadow: inset -3px -3px 5px var(--neumorphic-shadow-dark),
+    inset 3px 3px 5px var(--neumorphic-shadow-light);
+  outline: none;
+}
+
+/* Header Styles */
+header {
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Main Layout */
+main {
+  padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+  box-shadow: 0 -4px 6px var(--shadow-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+#darkModeToggle:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Certificate Preview */
+#certificateContainer {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.certificate-container {
+    /* Add styles for the certificate container */
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.certificate-container h2 {
+    color: var(--primary-color);
+}
+
+.certificate-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Notification Styles */
+.notification-area {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.notification {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s forwards, slideOut 0.5s 3s forwards;
+    position: relative;
+    opacity: 0;
+}
+
+.notification.error {
+    background-color: #f44336; /* Red background for errors */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}

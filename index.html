@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <h1>Certificate Generator</h1>
+            <p>Create customized certificates for your online courses.</p>
+            <button id="darkModeToggle" class="btn btn-outline-light">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section id="input-section" class="mb-4">
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <h2 class="card-title">Certificate Details</h2>
+                    <form id="certificateForm">
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label">Course Name</label>
+                            <input type="text" class="form-control" id="courseName" placeholder="Enter course name"
+                                required>
+                            <div class="invalid-feedback">Please enter the course name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="studentName" class="form-label">Student Name</label>
+                            <input type="text" class="form-control" id="studentName" placeholder="Enter student name"
+                                required>
+                            <div class="invalid-feedback">Please enter the student's name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="completionDate" class="form-label">Completion Date</label>
+                            <input type="date" class="form-control" id="completionDate" required>
+                            <div class="invalid-feedback">Please select the completion date.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="instructorName" class="form-label">Instructor Name</label>
+                            <input type="text" class="form-control" id="instructorName"
+                                placeholder="Enter instructor name" required>
+                            <div class="invalid-feedback">Please enter the instructor's name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signatureLogo" class="form-label">Instructor's Signature/Logo</label>
+                            <input type="text" class="form-control" id="signatureLogo"
+                                placeholder="Enter URL or description" required>
+                            <div class="invalid-feedback">Please enter signature URL/Description.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Generate Certificate</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificate-preview" class="mb-4">
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <h2 class="card-title">Certificate Preview</h2>
+                    <div id="certificateContainer" class="certificate-container">
+                        <!-- Certificate content will be dynamically generated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design-options" class="mb-4">
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <h2 class="card-title">Design Options</h2>
+                    <div class="mb-3">
+                        <label for="fontStyle" class="form-label">Font Style</label>
+                        <select class="form-select" id="fontStyle">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Helvetica">Helvetica</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fontSize" class="form-label">Font Size</label>
+                        <input type="number" class="form-control" id="fontSize" value="16" min="12" max="24">
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorPicker" class="form-label">Color Scheme</label>
+                        <input type="color" class="form-control" id="colorPicker" value="#000000">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications -->
+        <div id="notificationArea" class="notification-area"></div>
+    </main>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Certificate Generator. All rights reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

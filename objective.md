@@ -4,7 +4,7 @@
 This project is a client-side certificate generator for online courses. It allows users to input course details, student information, and design preferences to dynamically generate a certificate of completion. The application leverages HTML, CSS, and JavaScript to provide a user-friendly interface for customizing and displaying certificates. Key features include form validation, dynamic certificate generation, and customizable design options such as font style, font size, and color. It also features a dark mode toggle for improved user experience.
 
 ## Output
-<iframe src="https://github.com/niat-web/Certificate_Generator_for_Online_Courses" height="1000" width="300" title="Certificate_Generator_for_Online_Courses"></iframe>
+<iframe src="https://niat-web.github.io/Certificate_Generator_for_Online_Courses/" height="1000" width="300" title="Certificate_Generator_for_Online_Courses"></iframe>
 
 ## Project Requirements
 **Technologies:** HTML, CSS, JavaScript
